@@ -6,10 +6,31 @@
     <title>Image Guess</title>
     <style>
       body{margin: 20px;}
+      img{margin: 20px;}
     </style>
-    <script></script>
   </head>
   <body>
-    <img src="images/twoblur.jpg" id="zero" />
+    <img src="images/zeroblur.jpg" id="zero" />
+    <img src="images/oneblur.jpg" id="one" />
+    <img src="images/twoblur.jpg" id="two" />
+    <img src="images/threeblur.jpg" id="thre" />
+    <img src="images/fourblur.jpg" id="four" />
+    <img src="images/fiveblur.jpg" id="five" />
+
+    <script>
+      const images = document.getElementsByTagName("img");
+
+      for (let i = 0; i < images.length; i++) {
+        images[i].onclick = showAnswer;
+
+      }
+
+
+      function showAnswer(event) {
+        const image = event.target;
+        const name = image.id;
+        image.src = `images/${name}.jpg`;
+      }
+    </script>
   </body>
 </html>
