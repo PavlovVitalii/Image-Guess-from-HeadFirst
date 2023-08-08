@@ -30,6 +30,13 @@
         const image = event.target;
         const name = image.id;
         image.src = `images/${name}.jpg`;
+        setTimeout(reblur, 2000, image);
+      }
+
+      function reblur(image) {
+        let name = image.id;
+        name += "blur.jpg"
+        image.src = `images/${name}`;
       }
     </script>
   </body>
